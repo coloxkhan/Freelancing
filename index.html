@@ -97,7 +97,7 @@
         .section-head h2 { margin: 8px 0 0; font-size: clamp(28px, 3.5vw, 38px); letter-spacing: -1.5px; }
         .section-head p { margin: 9px 0 0; color: var(--muted); font-size: 14px; }
         .text-link { color: #476a30; font-size: 14px; font-weight: 800; white-space: nowrap; }
-        .category-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 13px; }
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 13px; }
         .category { min-height: 132px; display: flex; flex-direction: column; justify-content: space-between; padding: 17px; border: 1px solid var(--line); border-radius: 16px; background: white; cursor: pointer; text-align: left; transition: .18s ease; }
         .category:hover, .category.active { border-color: #a9d66a; background: #f7fbeF; transform: translateY(-3px); }
         .category-icon { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 12px; background: #eff5e8; font-size: 19px; }
@@ -241,6 +241,7 @@
                 <button class="category" type="button" data-category="Marketing"><span class="category-icon">↗</span><span><strong>Marketing</strong><small>52+ freelancers</small></span></button>
                 <button class="category" type="button" data-category="Video"><span class="category-icon">▶</span><span><strong>Video &amp; Animation</strong><small>39+ freelancers</small></span></button>
                 <button class="category" type="button" data-category="Business"><span class="category-icon">▤</span><span><strong>Business support</strong><small>31+ freelancers</small></span></button>
+                <button class="category" type="button" data-category="Transcription"><span class="category-icon">⌨</span><span><strong>Transcription</strong><small>18+ freelancers</small></span></button>
             </div>
         </section>
 
@@ -256,6 +257,7 @@
                     <button class="filter" type="button" data-filter="Development">Development</button>
                     <button class="filter" type="button" data-filter="Writing">Writing</button>
                     <button class="filter" type="button" data-filter="Marketing">Marketing</button>
+                    <button class="filter" type="button" data-filter="Transcription">Transcription</button>
                 </div>
                 <div class="talent-grid" id="talentGrid" aria-live="polite"></div>
             </div>
@@ -328,7 +330,9 @@
             { name: "Nia W.", role: "Content Writer", category: "Writing", initials: "NW", color: "purple", rating: "4.8", reviews: 31, rate: "$28", description: "Clear, warm writing that helps your brand sound like itself and connect with readers.", skills: ["Copywriting", "Editing", "SEO"] },
             { name: "Joel O.", role: "Digital Marketer", category: "Marketing", initials: "JO", color: "blue", rating: "4.9", reviews: 19, rate: "$40", description: "Practical campaign strategy and social content that turns attention into momentum.", skills: ["Social media", "Strategy", "Analytics"] },
             { name: "Zuri A.", role: "Product Designer", category: "Design", initials: "ZA", color: "purple", rating: "5.0", reviews: 17, rate: "$42", description: "User-first product design, from early sketches and prototypes to polished interfaces.", skills: ["UI/UX", "Prototyping", "Figma"] },
-            { name: "Ethan R.", role: "Video Editor", category: "Video", initials: "ER", color: "", rating: "4.8", reviews: 22, rate: "$32", description: "Crisp edits and motion graphics for short-form content, explainers and launch videos.", skills: ["Video editing", "Motion", "Premiere"] }
+            { name: "Ethan R.", role: "Video Editor", category: "Video", initials: "ER", color: "", rating: "4.8", reviews: 22, rate: "$32", description: "Crisp edits and motion graphics for short-form content, explainers and launch videos.", skills: ["Video editing", "Motion", "Premiere"] },
+            { name: "Miriam T.", role: "Audio Transcriptionist", category: "Transcription", initials: "MT", color: "purple", rating: "4.9", reviews: 16, rate: "$22", description: "Accurate, carefully proofread transcripts for interviews, meetings, podcasts and research recordings.", skills: ["Audio transcription", "Proofreading", "Research"] },
+            { name: "Brian N.", role: "Transcription & Subtitles", category: "Transcription", initials: "BN", color: "blue", rating: "4.8", reviews: 13, rate: "$25", description: "Clear transcripts, captions and subtitles with speaker labels and timestamping when needed.", skills: ["Subtitles", "Timestamping", "Video captions"] }
         ];
 
         const grid = document.getElementById("talentGrid");
